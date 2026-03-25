@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeviceBazaar | Special IoT Hardware</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-cyan: #00f2ff;
+            --dark-bg: #0a0b10;
+            --card-bg: #161b22;
+            --text-gray: #b1b1b1;
+            --white: #ffffff;
+            --accent-glow: rgba(0, 242, 255, 0.3);
+            --price-red: #ff4d4d;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+        body { font-family: 'Roboto', sans-serif; background-color: var(--dark-bg); color: var(--white); line-height: 1.6; }
+
+        /* VIP Navbar Fix */
+        .navbar {
+            display: flex;
+            flex-direction: column; /* Logo upar, baki niche agar kuch add kiya toh */
+            align-items: center;
+            padding: 40px 0; /* Padding barha di */
+            background: rgba(10, 11, 16, 0.98);
+            border-bottom: 2px solid var(--accent-glow);
+            position: relative; /* Sticky hataya taake 400px logo scroll me masla na kare */
+            z-index: 1000;
+        }
+
+        .nav-logo {
+            height: 400px; /* Apka manga hua size */
+            width: auto;
+            max-width: 95%; /* Screen se bahar na jaye */
+            filter: drop-shadow(0 0 20px var(--primary-cyan));
+            object-fit: contain;
+            display: block;
+        }
+
+        /* Hero */
+        .hero {
+            height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(rgba(10, 11, 16, 0.85), rgba(10, 11, 16, 0.85)), 
+                        url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1500');
+            background-size: cover;
+        }
+
+        .hero h1 { font-family: 'Orbitron', sans-serif; font-size: clamp(1.5rem, 6vw, 3.5rem); color: var(--primary-cyan); letter-spacing: 3px; }
+
+        /* Grid System - 2 Products per line */
+        .store-container { padding: 60px 8%; }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); 
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.1);
+            overflow: hidden;
+            transition: 0.4s;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+        }
+
+        .card:hover { transform: translateY(-10px); border-color: var(--primary-cyan); box-shadow: 0 0 30px rgba(0, 242, 255, 0.2); }
+
+        .card-img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-bottom: 2px solid var(--primary-cyan);
+        }
+
+        .card-body { padding: 30px; text-align: left; flex-grow: 1; }
+
+        .card h3 { font-family: 'Orbitron', sans-serif; margin-bottom: 15px; color: var(--primary-cyan); font-size: 1.4rem; }
+        
+        .card p { color: var(--text-gray); font-size: 1rem; margin-bottom: 25px; line-height: 1.5; }
+
+        .pricing { margin-bottom: 25px; }
+        .old-price { text-decoration: line-through; color: var(--text-gray); font-size: 1rem; margin-right: 15px; }
+        .new-price { font-weight: bold; font-family: 'Orbitron', sans-serif; color: var(--white); font-size: 1.5rem; }
+
+        .btn-buy {
+            display: block;
+            background: var(--primary-cyan);
+            color: #000;
+            text-align: center;
+            padding: 15px;
+            text-decoration: none;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: bold;
+            border-radius: 10px;
+            transition: 0.3s;
+            text-transform: uppercase;
+        }
+
+        .btn-buy:hover { background: var(--white); box-shadow: 0 0 20px var(--primary-cyan); transform: scale(1.02); }
+
+        /* Footer */
+        footer { text-align: center; padding: 60px; border-top: 1px solid var(--accent-glow); background: #050608; }
+        .dev-name { color: var(--primary-cyan); font-weight: bold; }
+
+        /* Mobile Fix */
+        @media (max-width: 768px) {
+            .grid { grid-template-columns: 1fr; }
+            .nav-logo { height: 200px; } /* Mobile pe thoda chota taake ajeeb na lage */
+            .navbar { padding: 20px 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <img src="https://i.postimg.cc/BbkYrk4j/file-0000000081b871fab9cdedc180a480a1-removebg-preview-2-removebg-preview.png" alt="DeviceBazaar Logo" class="nav-logo">
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>PREMIUM IOT GEAR</h1>
+            <p>High-End Ethical Hacking Tools & Custom Hardware</p>
+        </div>
+    </section>
+
+    <section class="store-container">
+        <div class="grid">
+            
+            <div class="card">
+                <img src="https://i.postimg.cc/QtqXmggC/Screenshot-20260325-180818.jpg" class="card-img" alt="ESP32-BlueJammer">
+                <div class="card-body">
+                    <h3>ESP32-BlueJammer</h3>
+                    <p>The ultimate 2.4GHz disruption tool. Built with ESP32 & nRF24 modules to audit wireless security and test IoT resilience against DoS attacks.</p>
+                    <div class="pricing">
+                        <span class="old-price">RS. 20,000</span>
+                        <span class="new-price">RS. 17,500</span>
+                    </div>
+                    <a href="https://wa.me/923212844383?text=I+want+to+order+ESP32-BlueJammer" class="btn-buy">Get it on WhatsApp</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://i.postimg.cc/cCq7SnrX/457666314-bee71205-64b0-4f40-bf15-2675d3468bc1.jpg" class="card-img" alt="Sample Hardware">
+                <div class="card-body">
+                    <h3>NRFBOX V3 (with-pcb)</h3>
+                    <p>nRFBOX is a wireless toolkit designed to explore, this device multifunctional device that can act as a scanner, analyzer, jammer, BLE jammer, BLE spoofer attacksk.</p>
+                    <div class="pricing">
+                        <span class="old-price">RS. 10,000</span>
+                        <span class="new-price">RS. 8,500</span>
+                    </div>
+                    <a href="https://wa.me/923212844383" class="btn-buy">Get it on WhatsApp</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 DeviceBazaar | Powered By <span class="dev-name">Shehbaz Memon</span></p>
+    </footer>
+
+</body>
+</html>
